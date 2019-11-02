@@ -1,0 +1,11 @@
+beautifulsoup4==4.8.1
+EbookLib==0.17.1
+fanfiction-api==1.0
+lxml==4.4.1
+markovify==0.7.2
+pdfkit==0.6.1
+pkg-resources==0.0.0
+PyYAML==5.1.2
+six==1.12.0
+soupsieve==1.9.4
+Unidecode==1.1.1
