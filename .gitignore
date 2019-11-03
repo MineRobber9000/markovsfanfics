@@ -111,3 +111,7 @@ dmypy.json
 
 # Virtual environment
 venv/*
+
+# Corpus and results
+*.txt*
+!requirements.txt
