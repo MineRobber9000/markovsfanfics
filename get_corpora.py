@@ -50,7 +50,6 @@ IDS = [
 	13245084, # An easter to remember
 	13419524, # Never the Same
 	13419488, # Caught In The Grey (Oneshot)
-	13178229, # Steven Universe: Advent of the Gara Droids
 	13390525, # The Diamond, the Pearl, and Spinel
 	13332598, # A Diamond in the rough
 	13386343, # Greg Universe of Pearl Stars
