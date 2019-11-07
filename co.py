@@ -1,6 +1,9 @@
 import markovify, time, random, textwrap
+from nltk.tokenize import sent_tokenize
 
 WORDS = 50*1000 # 50k words is considered a novel
+
+CHAPTER_WORDS = 4*1000 # average fanfic chapter (for novel-length fanfics) is 4k words
 
 PERC_NEW_PARAGRAPH = .35 # increase this to increase the amount of new paragraphs
 
@@ -12,11 +15,23 @@ out = ""
 while len(out.split())<=WORDS:
 	sent = sentence()
 	while sent is None: sent = sentence()
-	out+=sent
-	if random.random()<=PERC_NEW_PARAGRAPH: # randomly start a new paragraph
-		out+="\n\n"
-	else:
-		out+=" "
+	out+=sent+" "
+out.strip()
+
+sentences = sent_tokenize(out)
+chapters = []
+chapter = []
+for sentence in sentences:
+	if len(" ".join(chapter).split())>=CHAPTER_WORDS:
+		print(chapter)
+		chapters.append(" ".join(chapter))
+		chapter = []
+	chapter.append(sentence)
+	if random.random()<=PERC_NEW_PARAGRAPH:
+		chapter.append("\n") # start new paragraph
+chapters.append(" ".join(chapter))
+
+out = "\n\n".join(["Chapter {!s}\n\n{}".format(i,x) for i,x in enumerate(chapters,1)])
 
 with open(time.strftime("%Y%m%d-%H.%M.%S.out.txt"),"w") as f:
-	f.write(textwrap.fill(out,80)) # wrap to 80 chars
+	f.write(out)
