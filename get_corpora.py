@@ -44,7 +44,6 @@ IDS = [
 	13419881, # A Nightmarish Storm
 	13178650, # When the past repeats itself
 	13380008, # Amber
-	13394195, # I don't need the world to see, I've been the best I can be
 	11872183, # Burn Bright
 	13391150, # Era 4: A New Gem
 	13245084, # An easter to remember
